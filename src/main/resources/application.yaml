@@ -18,6 +18,8 @@ spring:
     name: ms-books-catalogue
   elasticsearch:
     uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+    username: ${ELASTICSEARCH_USERNAME:elastic}
+    password: ${ELASTICSEARCH_PASSWORD:}
 
 springdoc:
   api-docs:
