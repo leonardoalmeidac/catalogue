@@ -1,8 +1,12 @@
 server:
   port: ${PORT:8080}
+
 spring:
   datasource:
+    url: ${SPRING_DATASOURCE_URL}
     driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -10,15 +14,16 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
   application:
     name: ms-books-catalogue
   elasticsearch:
     uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+
 springdoc:
   api-docs:
     enabled: true
     path: /v3/api-docs
+
 eureka:
   client:
     serviceUrl:
@@ -26,6 +31,7 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: ms-books-catalogue
+
 management:
   endpoints:
     web:
